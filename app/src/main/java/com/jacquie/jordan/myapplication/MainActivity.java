@@ -25,4 +25,56 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
+    /**
+     * The Activity moves from onCreate() to onStart() and the Activity becomes visible to the user. Perform any final preparations needed for the Activity to come into the foreground and
+     * become interactive. After onStart() the OS will call onResume().
+     */
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    /**
+     * The Activity is now at the top of the Activity stack and is capturing all user input. Most of the applications core functionality is handled in this method.
+     */
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    /**
+     * The OS calls this method when the user performs an action which pushes this Activity out of focus, for example the user might have pushed the back button to move out of the app. An Activity
+     * in the paused state may continue to update the UI. The onPause() method always follows the onResume() method. After
+     */
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    /**
+     * The OS calls onStop() when the Activity is no longer visible to the user, and after completing onPause(). This could be the result of a new Activity starting overtop of this Activity, or the
+     * user may have closed the application. The Activity hasn't been destroyed, it is just in an inactive state.
+     */
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    /**
+     * The onRestart() method is called when an activity in the stopped state is about to restart. The state of the Activity is restored to the point at which it was stopped. This method will
+     * be followed by onStart().
+     */
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
+
+    /**
+     * This is the final method called by the OS when the Activity is being completely destroyed. Generally used to cleanup and relinquish all resources being used by the application.
+     */
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }
