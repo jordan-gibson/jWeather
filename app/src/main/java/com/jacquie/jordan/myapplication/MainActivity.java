@@ -2,6 +2,8 @@ package com.jacquie.jordan.myapplication;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 
 /**
  * The Activity class serves as the entry point for an applications interaction with the user, it provides the window in which the app draws its UI. Each screen that we want to present to the user
@@ -11,6 +13,7 @@ import android.os.Bundle;
  * while this Activity is onscreen will be handled in the code below.
  */
 public class MainActivity extends Activity {
+    private RecyclerView recyclerView;
 
     /**
      * Activities go through a number of states throughout their lifetime. A series of callbacks are used to handle the transitions between the states, some of them are optional, some are not.
@@ -24,6 +27,13 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        recyclerView = (RecyclerView)findViewById(R.id.main_activity_recyclerView);
+        LinearLayoutManager llm = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(llm);
+
+        DailyWeatherAdapter adapter = new DailyWeatherAdapter(Weather.testWeather());
+        recyclerView.setAdapter(adapter);
     }
 
     /**

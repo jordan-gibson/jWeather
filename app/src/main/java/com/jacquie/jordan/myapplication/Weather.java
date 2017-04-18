@@ -1,6 +1,8 @@
 package com.jacquie.jordan.myapplication;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 /**
  * Created by Jordan on 4/16/2017.
@@ -22,8 +24,10 @@ public class Weather {
      * @param latitude - The latitude of the location for which we want to gather weather info.
      * @param longitude - The longitude of the location for which we want to gather weather info.
      */
-    public Weather(String latitude,String longitude){
-
+    public Weather(String latitude,String longitude,String weatherSummary){
+        mLatitude = latitude;
+        mLongitude = longitude;
+        mWeatherSummary = weatherSummary;
     }
 
     /**
@@ -31,6 +35,14 @@ public class Weather {
      * @return The weather summary for an instance of Weather.
      */
     public String getWeatherSummary(){
-        return "something";
+        return mWeatherSummary;
+    }
+
+    public static List<Weather> testWeather(){
+        List<Weather> weathers = new ArrayList<Weather>();
+        weathers.add(new Weather("10","15","Rain"));
+        weathers.add(new Weather("20","25","Sun"));
+        weathers.add(new Weather("1","2","Wind"));
+        return weathers;
     }
 }
